@@ -18,7 +18,7 @@ class _BMIState extends State<BMI> {
   int height = 180;
   int weight = 100;
   int age = 20;
-  String bmi = "";
+  String bmiC = "";
 
   double containerHeight = 0;
 
@@ -98,7 +98,7 @@ class _BMIState extends State<BMI> {
                     ),
                     child: Slider(
                       value: height.toDouble(),
-                      min: 0,
+                      min: 50,
                       max: 300,
                       onChanged: (double newValue) {
                         setState(() {
@@ -194,7 +194,7 @@ class _BMIState extends State<BMI> {
           Container(
             child: FlatButton(
               onPressed: () {
-                Calc calc = Calc(height: height, weight: weight);
+                Calc calc = Calc();
                 var result = Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -206,8 +206,8 @@ class _BMIState extends State<BMI> {
                   ),
                 );
                 if (result != null) {
-                  bmi = calc.getResult();
-                  containerHeight = 40;
+                  bmiC = calc.getResult();
+                  containerHeight = 60;
                 }
               },
               child: Center(
@@ -231,7 +231,7 @@ class _BMIState extends State<BMI> {
                   borderRadius: BorderRadius.circular(10)),
               color: kBottomContainerColor,
               child: Text(
-                "Previous BMI value " + bmi,
+                "Previous BMI value " + bmiC,
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 20),
               ),

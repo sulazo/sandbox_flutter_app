@@ -47,7 +47,7 @@ class Result extends StatelessWidget {
                           Flexible(
                             child: Text(
                               getResult,
-                              style: TextStyle(fontSize: 30),
+                              style: TextStyle(fontSize: 20),
                             ),
 
                             // getResult()
@@ -120,7 +120,7 @@ class Result extends StatelessWidget {
                       ],
                     ),
                   ))*/
-                          )
+                          ),
                         ])))
           ]),
     );
